@@ -1,0 +1,103 @@
+
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+<edmx:DataServices m:DataServiceVersion="2.0">
+<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZFTS_FEDEX_UNI_CORE_FIORI_CDS" xml:lang="en" sap:schema-version="1">
+<EntityType Name="ZFTS_FEDEX_UNI_CORE_FIORIType" sap:label="CDS view for Fedex Final View for Fiori" sap:semantics="aggregate" sap:content-version="1">
+<Key>
+<PropertyRef Name="ID"/>
+</Key>
+<Property Name="ID" Type="Edm.String" Nullable="false" sap:filterable="false" sap:updatable="false" sap:sortable="false"/>
+<Property Name="TotaledProperties" Type="Edm.String" sap:aggregation-role="totaled-properties-list" sap:is-annotation="true" sap:updatable="false" sap:sortable="false"/>
+<Property Name="tracking_num" Type="Edm.String" MaxLength="50" sap:aggregation-role="dimension" sap:label="Tracking Number" sap:creatable="false" sap:updatable="false"/>
+<Property Name="aging_days" Type="Edm.String" MaxLength="11" sap:aggregation-role="dimension" sap:label="AGING_DAYS" sap:creatable="false" sap:updatable="false"/>
+<Property Name="ship_date_3pl" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:text="ship_date_3pl_T" sap:label="SHIP_DATE_3PL" sap:creatable="false" sap:updatable="false" sap:semantics="yearmonthday"/>
+<Property Name="ship_date_3pl_T" Type="Edm.String" MaxLength="10" sap:label="SHIP_DATE_3PL (Description)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+<Property Name="status_color" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:label="FIORI ValueState" sap:creatable="false" sap:updatable="false"/>
+<Property Name="kunwe_name" Type="Edm.String" MaxLength="35" sap:aggregation-role="dimension" sap:label="Name" sap:creatable="false" sap:updatable="false"/>
+<Property Name="planned_gi_dt" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:text="planned_gi_dt_T" sap:label="Pland Gds Mvmnt Date" sap:creatable="false" sap:updatable="false" sap:semantics="yearmonthday"/>
+<Property Name="planned_gi_dt_T" Type="Edm.String" MaxLength="10" sap:label="Pland Gds Mvmnt Date (Description)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+<Property Name="so_create_dt" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:text="so_create_dt_T" sap:label="Document Date" sap:creatable="false" sap:updatable="false" sap:semantics="yearmonthday"/>
+<Property Name="so_create_dt_T" Type="Edm.String" MaxLength="10" sap:label="Document Date (Description)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+<Property Name="shipto_address" Type="Edm.String" MaxLength="35" sap:aggregation-role="dimension" sap:label="Street" sap:creatable="false" sap:updatable="false"/>
+<Property Name="LAST_STATUS_DT" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:text="LAST_STATUS_DT_T" sap:label="Changed on" sap:creatable="false" sap:updatable="false" sap:semantics="yearmonthday"/>
+<Property Name="LAST_STATUS_DT_T" Type="Edm.String" MaxLength="10" sap:label="Changed on (Description)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+<Property Name="unified_status" Type="Edm.String" MaxLength="2" sap:aggregation-role="dimension" sap:label="UOV status code" sap:creatable="false" sap:updatable="false"/>
+<Property Name="error_owner" Type="Edm.String" MaxLength="8" sap:aggregation-role="dimension" sap:label="ERROR_OWNER" sap:creatable="false" sap:updatable="false"/>
+<Property Name="interface_dt" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:text="interface_dt_T" sap:label="INTERFACE_DT" sap:creatable="false" sap:updatable="false" sap:semantics="yearmonthday"/>
+<Property Name="interface_dt_T" Type="Edm.String" MaxLength="10" sap:label="INTERFACE_DT (Description)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+<Property Name="intfc_to_wave_min" Type="Edm.String" MaxLength="11" sap:aggregation-role="dimension" sap:label="INTFC_TO_WAVE_MIN" sap:creatable="false" sap:updatable="false"/>
+<Property Name="shipto_city" Type="Edm.String" MaxLength="50" sap:aggregation-role="dimension" sap:label="Ship-To City" sap:creatable="false" sap:updatable="false"/>
+<Property Name="IDOC_CREATED_TM" Type="Edm.Time" Precision="0" sap:aggregation-role="dimension" sap:text="IDOC_CREATED_TM_T" sap:label="Created at" sap:creatable="false" sap:updatable="false"/>
+<Property Name="IDOC_CREATED_TM_T" Type="Edm.String" MaxLength="10" sap:label="Created at (Description)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+<Property Name="FEDEX_STATUS_RAW" Type="Edm.String" MaxLength="30" sap:aggregation-role="dimension" sap:label="Order Status" sap:creatable="false" sap:updatable="false"/>
+<Property Name="plant_name" Type="Edm.String" MaxLength="30" sap:aggregation-role="dimension" sap:label="Name 1" sap:creatable="false" sap:updatable="false"/>
+<Property Name="interface_tm" Type="Edm.Time" Precision="0" sap:aggregation-role="dimension" sap:text="interface_tm_T" sap:label="INTERFACE_TM" sap:creatable="false" sap:updatable="false"/>
+<Property Name="interface_tm_T" Type="Edm.String" MaxLength="10" sap:label="INTERFACE_TM (Description)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+<Property Name="UNIFIED_STATUS_DESC" Type="Edm.String" MaxLength="50" sap:aggregation-role="dimension" sap:label="Display text for FIO" sap:creatable="false" sap:updatable="false"/>
+<Property Name="shipto_country" Type="Edm.String" MaxLength="50" sap:aggregation-role="dimension" sap:label="Country" sap:creatable="false" sap:updatable="false"/>
+<Property Name="kunag_name" Type="Edm.String" MaxLength="35" sap:aggregation-role="dimension" sap:label="Name" sap:creatable="false" sap:updatable="false"/>
+<Property Name="actual_gi_dt" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:text="actual_gi_dt_T" sap:label="Act. Gds Mvmnt Date" sap:creatable="false" sap:updatable="false" sap:semantics="yearmonthday"/>
+<Property Name="actual_gi_dt_T" Type="Edm.String" MaxLength="10" sap:label="Act. Gds Mvmnt Date (Description)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+<Property Name="delv_create_dt" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:text="delv_create_dt_T" sap:label="Created on" sap:creatable="false" sap:updatable="false" sap:semantics="yearmonthday"/>
+<Property Name="delv_create_dt_T" Type="Edm.String" MaxLength="10" sap:label="Created on (Description)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+<Property Name="stryker_order" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:label="STRYKER_ORDER" sap:creatable="false" sap:updatable="false"/>
+<Property Name="customer_po" Type="Edm.String" MaxLength="90" sap:aggregation-role="dimension" sap:label="Customer PO" sap:creatable="false" sap:updatable="false"/>
+<Property Name="wave_to_ship_min" Type="Edm.String" MaxLength="11" sap:aggregation-role="dimension" sap:label="WAVE_TO_SHIP_MIN" sap:creatable="false" sap:updatable="false"/>
+<Property Name="IDOC_CREATED_DT" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:text="IDOC_CREATED_DT_T" sap:label="Created On" sap:creatable="false" sap:updatable="false" sap:semantics="yearmonthday"/>
+<Property Name="IDOC_CREATED_DT_T" Type="Edm.String" MaxLength="10" sap:label="Created On (Description)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+<Property Name="join_status" Type="Edm.String" MaxLength="1" sap:aggregation-role="dimension" sap:label="JOIN_STATUS" sap:creatable="false" sap:updatable="false"/>
+<Property Name="pkt_ctrl_num" Type="Edm.String" MaxLength="20" sap:aggregation-role="dimension" sap:label="PKT Ctrl Number" sap:creatable="false" sap:updatable="false"/>
+<Property Name="BATCH_NUM" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:label="Batch" sap:creatable="false" sap:updatable="false"/>
+<Property Name="cdc" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:label="CDC facility identif" sap:creatable="false" sap:updatable="false"/>
+<Property Name="div_name" Type="Edm.String" MaxLength="50" sap:aggregation-role="dimension" sap:label="Division Name" sap:creatable="false" sap:updatable="false"/>
+<Property Name="error_msg" Type="Edm.String" MaxLength="70" sap:aggregation-role="dimension" sap:label="Status text" sap:creatable="false" sap:updatable="false"/>
+<Property Name="file_date" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:text="file_date_T" sap:label="File date" sap:creatable="false" sap:updatable="false" sap:semantics="yearmonthday"/>
+<Property Name="file_date_T" Type="Edm.String" MaxLength="10" sap:label="File date (Description)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+<Property Name="gi_posted" Type="Edm.String" MaxLength="1" sap:aggregation-role="dimension" sap:label="GI_POSTED" sap:creatable="false" sap:updatable="false"/>
+<Property Name="idoc_num" Type="Edm.String" MaxLength="16" sap:aggregation-role="dimension" sap:label="IDoc number" sap:creatable="false" sap:updatable="false"/>
+<Property Name="kunag" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:label="Customer" sap:creatable="false" sap:updatable="false"/>
+<Property Name="kunwe" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:label="Ship-to party" sap:creatable="false" sap:updatable="false"/>
+<Property Name="Matnr" Type="Edm.String" MaxLength="40" sap:aggregation-role="dimension" sap:label="Material" sap:creatable="false" sap:updatable="false"/>
+<Property Name="plant" Type="Edm.String" MaxLength="4" sap:aggregation-role="dimension" sap:label="plant" sap:creatable="false" sap:updatable="false"/>
+<Property Name="ship_via1" Type="Edm.String" MaxLength="50" sap:aggregation-role="dimension" sap:label="Ship-Via" sap:creatable="false" sap:updatable="false"/>
+<Property Name="sla_met" Type="Edm.String" MaxLength="1" sap:aggregation-role="dimension" sap:label="SLA_MET" sap:creatable="false" sap:updatable="false"/>
+<Property Name="vbeln" Type="Edm.String" MaxLength="16" sap:aggregation-role="dimension" sap:label="IDoc number" sap:creatable="false" sap:updatable="false"/>
+<Property Name="vbelv" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:label="Preceding Document" sap:creatable="false" sap:updatable="false"/>
+<Property Name="VSBED" Type="Edm.String" MaxLength="2" sap:aggregation-role="dimension" sap:label="Shipping Conditions" sap:creatable="false" sap:updatable="false"/>
+<Property Name="wave_dt" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:text="wave_dt_T" sap:label="WAVE_DT" sap:creatable="false" sap:updatable="false" sap:semantics="yearmonthday"/>
+<Property Name="wave_dt_T" Type="Edm.String" MaxLength="10" sap:label="WAVE_DT (Description)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+<Property Name="wave_tm" Type="Edm.Time" Precision="0" sap:aggregation-role="dimension" sap:text="wave_tm_T" sap:label="WAVE_TM" sap:creatable="false" sap:updatable="false"/>
+<Property Name="wave_tm_T" Type="Edm.String" MaxLength="10" sap:label="WAVE_TM (Description)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+<Property Name="Werks" Type="Edm.String" MaxLength="4" sap:aggregation-role="dimension" sap:label="Plant" sap:creatable="false" sap:updatable="false"/>
+<Property Name="order_to_ship_days" Type="Edm.Decimal" Precision="42" Scale="1" sap:aggregation-role="measure" sap:creatable="false" sap:filterable="false" sap:text="order_to_ship_days_F" sap:updatable="false" sap:label="ORDER_TO_SHIP_DAYS"/>
+<Property Name="order_to_ship_days_F" Type="Edm.String" MaxLength="60" sap:label="ORDER_TO_SHIP_DAYS (Formatted)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+<Property Name="TOTAL_UNITS" Type="Edm.Decimal" Precision="42" Scale="0" sap:aggregation-role="measure" sap:creatable="false" sap:filterable="false" sap:text="TOTAL_UNITS_F" sap:updatable="false" sap:label="Total units"/>
+<Property Name="TOTAL_UNITS_F" Type="Edm.String" MaxLength="60" sap:label="Total units (Formatted)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+<Property Name="BUNDLES_WAVED" Type="Edm.Decimal" Precision="42" Scale="0" sap:aggregation-role="measure" sap:creatable="false" sap:filterable="false" sap:text="BUNDLES_WAVED_F" sap:updatable="false" sap:label="Bundles Waved"/>
+<Property Name="BUNDLES_WAVED_F" Type="Edm.String" MaxLength="60" sap:label="Bundles Waved (Formatted)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+<Property Name="BUNDLES_PACKED" Type="Edm.Decimal" Precision="42" Scale="0" sap:aggregation-role="measure" sap:creatable="false" sap:filterable="false" sap:text="BUNDLES_PACKED_F" sap:updatable="false" sap:label="Bundles Packed"/>
+<Property Name="BUNDLES_PACKED_F" Type="Edm.String" MaxLength="60" sap:label="Bundles Packed (Formatted)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+<Property Name="BUNDLES_SHIPPED" Type="Edm.Decimal" Precision="42" Scale="0" sap:aggregation-role="measure" sap:creatable="false" sap:filterable="false" sap:text="BUNDLES_SHIPPED_F" sap:updatable="false" sap:label="Bundles Shipped"/>
+<Property Name="BUNDLES_SHIPPED_F" Type="Edm.String" MaxLength="60" sap:label="Bundles Shipped (Formatted)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+<Property Name="delivery_value" Type="Edm.Decimal" Precision="42" Scale="2" sap:aggregation-role="measure" sap:creatable="false" sap:filterable="false" sap:text="delivery_value_F" sap:updatable="false" sap:label="DELIVERY_VALUE"/>
+<Property Name="delivery_value_F" Type="Edm.String" MaxLength="60" sap:label="DELIVERY_VALUE (Formatted)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+<Property Name="SERIAL_NUM" Type="Edm.Decimal" Precision="42" Scale="0" sap:aggregation-role="measure" sap:creatable="false" sap:filterable="false" sap:text="SERIAL_NUM_F" sap:updatable="false" sap:label="No.serial numbers"/>
+<Property Name="SERIAL_NUM_F" Type="Edm.String" MaxLength="60" sap:label="No.serial numbers (Formatted)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+</EntityType>
+<EntityType Name="ODataQueryAdditionalMetadata" sap:content-version="1">
+<Key>
+<PropertyRef Name="ODataQueryMetadata"/>
+</Key>
+<Property Name="ODataQueryMetadata" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="ODataQueryMetadataValue_Current" Type="Edm.String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="ODataQueryMetadataValueAtDefine" Type="Edm.String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+</EntityType>
+<EntityContainer Name="ZFTS_FEDEX_UNI_CORE_FIORI_CDS_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+<EntitySet Name="ZFTS_FEDEX_UNI_CORE_FIORI" EntityType="ZFTS_FEDEX_UNI_CORE_FIORI_CDS.ZFTS_FEDEX_UNI_CORE_FIORIType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+<EntitySet Name="AdditionalMetadata" EntityType="ZFTS_FEDEX_UNI_CORE_FIORI_CDS.ODataQueryAdditionalMetadata" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+</EntityContainer>
+<atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="http://sapecdci01.strykercorp.com:44300/sap/opu/odata/sap/ZFTS_FEDEX_UNI_CORE_FIORI_CDS/$metadata"/>
+<atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="http://sapecdci01.strykercorp.com:44300/sap/opu/odata/sap/ZFTS_FEDEX_UNI_CORE_FIORI_CDS/$metadata"/>
+</Schema>
+</edmx:DataServices>
+</edmx:Edmx>

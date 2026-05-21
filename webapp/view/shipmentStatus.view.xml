@@ -1,0 +1,322 @@
+<mvc:View
+    controllerName="styker.com.trackordershipment.controller.shipmentStatus"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+     xmlns:f="sap.f"
+      xmlns:layout="sap.ui.layout"
+    class="sapUiResponsiveContentPadding"
+    xmlns:core="sap.ui.core">
+
+    <Page
+        showHeader="false"
+        class="sapUiContentPadding pageBg">
+
+        <content>
+        <!-- ================= HEADER ================= -->
+            <VBox class="headerSection">
+
+                <HBox
+                    alignItems="Start"
+                    class="sapUiSmallMarginBottom">
+
+                    <Button
+                        text="Back to Orders"
+                        icon="sap-icon://nav-back"
+                        type="Transparent"
+                        press="onBack"
+                        class="backBtn sapUiTinyMarginEnd" />
+
+                    <VBox class="sapUiTinyMarginBegin">
+
+                        <Title
+                            text="Shipment Tracking Status"
+                            level="H1"
+                            class="pageTitle" />
+
+                        <Text
+                            text="Live tracking for selected shipment"
+                            class="subText" />
+
+                    </VBox>
+
+                </HBox>
+
+            </VBox>
+
+            <!-- ================= SHIPMENT SUMMARY ================= -->
+            <f:Card class="shipmentCard summaryCard">
+
+                <f:content>
+
+                    <VBox class="summaryWrapper">
+
+                        <!-- ================= FIRST ROW ================= -->
+                        <layout:Grid
+                            defaultSpan="XL3 L3 M6 S12"
+                            hSpacing="2"
+                            vSpacing="1"
+                            class="sapUiSmallMarginBottom">
+
+                            <VBox class="infoBlock">
+                                <Text text="PKT CTRL NUMBER" class="labelText"/>
+                                <Text text="4007886103" class="valueText"/>
+                            </VBox>
+
+                            <VBox class="infoBlock">
+                                <Text text="STRYKER ORDER NUMBER" class="labelText"/>
+                                <Text text="—" class="valueText"/>
+                            </VBox>
+
+                            <VBox class="infoBlock">
+                                <Text text="CUSTOMER PO" class="labelText"/>
+                                <Text text="60182811" class="valueText"/>
+                            </VBox>
+
+                            <VBox class="infoBlock">
+                                <Text text="SHIP-TO NAME" class="labelText"/>
+                                <Text text="NV USE ONLY STRYKER" class="valueText"/>
+                                <Text text="JAPAN KK" class="valueText"/>
+                            </VBox>
+
+                            <VBox class="infoBlock">
+                                <Text text="DIVISION" class="labelText"/>
+                                <Text text="0002" class="valueText"/>
+                            </VBox>
+
+                            <VBox class="infoBlock">
+                                <Text text="SHIP-VIA" class="labelText"/>
+                                <Text text="Intl Consolidation" class="valueText"/>
+                            </VBox>
+
+                            <VBox class="infoBlock">
+                                <Text text="ORDER STATUS" class="labelText"/>
+                                <Text text="10 - UNSELECTED" class="statusText"/>
+                            </VBox>
+
+                            <VBox class="infoBlock">
+                                <Text text="ORDER DROP DATE/TIME" class="labelText"/>
+                                <Text text="2026-05-07 00:05:08" class="valueText"/>
+                            </VBox>
+
+                        </layout:Grid>
+
+                        <!-- ================= SECOND ROW ================= -->
+                        <layout:Grid
+                            defaultSpan="XL3 L3 M6 S12"
+                            hSpacing="2"
+                            vSpacing="1">
+
+                            <VBox class="infoBlock">
+                                <Text text="STATUS DATE" class="labelText"/>
+                                <Text text="—" class="valueText"/>
+                            </VBox>
+
+                            <VBox class="infoBlock">
+                                <Text text="TOTAL UNITS" class="labelText"/>
+                                <Text text="160" class="valueText"/>
+                            </VBox>
+
+                            <VBox class="infoBlock">
+                                <Text text="ACTUAL CARTONS SHIPPED" class="labelText"/>
+                                <Text text="0" class="valueText"/>
+                            </VBox>
+
+                            <VBox class="infoBlock">
+                                <Text text="TRACKING" class="labelText"/>
+                                <Text text="—" class="valueText"/>
+                            </VBox>
+
+                        </layout:Grid>
+
+                    </VBox>
+
+                </f:content>
+
+            </f:Card>
+
+            <!-- JOURNEY CARD -->
+            <VBox class="journeyCard">
+
+                <!-- HEADER -->
+                <HBox
+                    justifyContent="SpaceBetween"
+                    alignItems="Center"
+                    class="sapUiSmallMarginBottom">
+
+                    <HBox alignItems="Center">
+
+                        <VBox class="purpleBar" />
+
+                        <Title
+                            text="JOURNEY — FEDEX and SAP"
+                            level="H4"
+                            class="journeyTitle sapUiTinyMarginBegin" />
+
+                    </HBox>
+
+                    <HBox class="statusChip">
+
+                        <Text
+                            text="SAP Open = FedEx 10–60 • SAP Closed = FedEx 90"
+                            class="chipText" />
+
+                    </HBox>
+
+                </HBox>
+
+                <!-- STATUS AREA -->
+                <HBox
+                    justifyContent="SpaceBetween"
+                    class="sapUiMediumMarginBottom">
+
+                    <!-- OPEN STATUS -->
+                    <VBox class="statusBoxOpen">
+
+                        <Text
+                            text="SAP STATUS"
+                            class="statusLabel" />
+
+                        <HBox
+                            alignItems="Center"
+                            class="sapUiTinyMarginTop">
+
+                            <core:Icon
+                                src="sap-icon://circle-task-2"
+                                class="openIcon" />
+
+                            <Title
+                                text="{journeyModel>/sapStatus}"
+                                level="H3"
+                                class="openText sapUiTinyMarginBegin" />
+
+                        </HBox>
+
+                        <Text
+                            text="{journeyModel>/mappingText}"
+                            class="mappingText sapUiTinyMarginTop" />
+
+                    </VBox>
+
+                    <!-- CLOSED STATUS -->
+                    <VBox class="statusBoxClosed">
+
+                        <Text
+                            text="SAP STATUS"
+                            class="statusLabel" />
+
+                        <HBox
+                            alignItems="Center"
+                            class="sapUiTinyMarginTop">
+
+                            <core:Icon
+                                src="sap-icon://circle-task-2"
+                                class="closedIcon" />
+
+                            <Title
+                                text="Closed"
+                                level="H3"
+                                class="closedText sapUiTinyMarginBegin" />
+
+                        </HBox>
+
+                        <Text
+                            text="Maps FedEx 90"
+                            class="mappingText sapUiTinyMarginTop" />
+
+                    </VBox>
+
+                </HBox>
+
+                <!-- TIMELINE -->
+                <HBox
+                    items="{journeyModel>/steps}"
+                    justifyContent="SpaceBetween"
+                    alignItems="Start"
+                    class="timelineContainer">
+
+                    <VBox
+                        alignItems="Center"
+                        class="timelineStep">
+
+                        <!-- CIRCLE -->
+                  <FlexBox
+    justifyContent="Center"
+    alignItems="Center"
+    width="3rem"
+    height="3rem"
+    class="timelineCircle">
+
+    <core:Icon
+        src="{
+            path:'journeyModel>state',
+            formatter:'.formatter.getTimelineIcon'
+        }"
+        color="white" />
+
+    <customData>
+
+        <core:CustomData
+            key="state"
+            value="{journeyModel>state}"
+            writeToDom="true" />
+
+    </customData>
+
+</FlexBox>
+
+                        <!-- LINE -->
+                        <VBox
+                            class="timelineLine"
+                            visible="{journeyModel>showLine}" />
+
+                        <!-- TITLE -->
+                        <Title
+                            text="{journeyModel>title}"
+                            level="H5"
+                            class="timelineTitle sapUiTinyMarginTop" />
+
+                        <!-- STATUS -->
+                        <Text
+                            text="{journeyModel>state}"
+                            class="{
+                                = ${journeyModel>state} === 'Complete'
+                                ? 'statusComplete'
+                                : ${journeyModel>state} === 'In Progress'
+                                ? 'statusProgress'
+                                : 'statusPending'
+                            }" />
+
+                    </VBox>
+
+                </HBox>
+
+                <!-- ALIGNMENT MESSAGE -->
+                <HBox
+                    justifyContent="SpaceBetween"
+                    alignItems="Center"
+                    class="alignmentBox sapUiMediumMarginTop">
+
+                    <HBox alignItems="Center">
+
+                        <core:Icon
+                            src="sap-icon://circle-task-2"
+                            class="alignmentIcon" />
+
+                       <FormattedText
+    htmlText="Aligned — SAP &lt;b&gt;Open&lt;/b&gt; matches FedEx state 20 (Printed)."
+    class="sapUiTinyMarginBegin alignmentText" />
+                    </HBox>
+
+                    <Text
+                        text="FX:20 → SAP:OPEN"
+                        class="alignmentCode" />
+
+                </HBox>
+
+            </VBox>
+
+        </content>
+
+    </Page>
+
+</mvc:View>

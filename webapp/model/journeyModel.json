@@ -1,0 +1,42 @@
+{
+  "sapStatus": "Open",
+  "mappingText": "Maps FedEx 10 → 60",
+
+  "steps": [
+    {
+      "title": "10 – Unselected",
+      "state": "Complete",
+      "showLine": true
+    },
+    {
+      "title": "20 – Printed",
+      "state": "In Progress",
+      "showLine": true
+    },
+    {
+      "title": "35 – In Packing",
+      "state": "Pending",
+      "showLine": true
+    },
+    {
+      "title": "40 – Pack Complete",
+      "state": "Pending",
+      "showLine": true
+    },
+    {
+      "title": "50 – Weighed",
+      "state": "Pending",
+      "showLine": true
+    },
+    {
+      "title": "60 – Manifested",
+      "state": "Pending",
+      "showLine": true
+    },
+    {
+      "title": "90 – Shipped/Invoiced",
+      "state": "Pending",
+      "showLine": false
+    }
+  ]
+}

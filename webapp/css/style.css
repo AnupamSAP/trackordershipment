@@ -1,0 +1,337 @@
+/* Enter your custom styles here *//* Enter your custom styles here */
+.kpiContainer {
+    background: #2a8af7;
+    border-radius: 1rem;
+    padding: 1.5rem 2rem;
+    height: 5rem
+}
+
+.kpiValue {
+    color: #ffb300;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.kpiLabel {
+    color: #d1d5db;
+    font-size: 0.9rem;
+    letter-spacing: 0.05rem;
+}
+
+.kpiDivider {
+    width: 1px;
+    height: 4rem;
+    background-color: #2d2d2d;
+}
+.shipmentPage {
+    background: #f5f7fa;
+}
+
+.subText {
+    color: #6b7280;
+}
+
+.backBtn {
+    border-radius: 1rem;
+}
+
+.summaryCard {
+    background: white;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 0.125rem 0.5rem rgba(0,0,0,0.08);
+}
+
+.summaryLabel {
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: #6b7280;
+    margin-bottom: 0.5rem;
+}
+
+.summaryValue {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #111827;
+}
+
+.journeyCard {
+    background: white;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 0.125rem 0.5rem rgba(0,0,0,0.08);
+}
+
+.stepCircle {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+}
+
+.completedStep {
+    background: #256f3a;
+}
+
+.stepLine {
+    height: 2px;
+    
+    background: #aa0808;
+    flex-grow: 100;
+    margin: 12 2 .5rem;
+    margin-bottom: 3.5rem;
+}
+
+.stepTitle {
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.stepTime {
+    font-size: 0.75rem;
+    color: #6b7280;
+    text-align: center;
+}
+
+.locationText {
+    font-size: 0.7rem;
+    color: #6b7280;
+}
+
+.locationIcon {
+    color: #b45309;
+}
+
+.orderTile {
+    width: 17rem;
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+    background: #ffffff;
+    box-shadow: 0 0.2rem 0.8rem rgba(0,0,0,0.08);
+    border-top: 4px solid #6b7a8f;
+}
+
+.tileIconBox {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 1rem;
+    background: #f3f4f6;
+}
+
+.countBadge {
+    min-width: 2.5rem;
+    height: 2rem;
+    padding: 0 0.7rem;
+    border-radius: 1rem;
+    background: #f3f4f6;
+}
+
+.badgeText {
+    font-weight: bold;
+    color: #6b7280;
+}
+
+.tileNumber {
+    font-size: 3rem !important;
+    font-weight: 700;
+    color: #111827;
+    margin-top: 1.5rem;
+}
+
+.tileTitle {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #111827;
+}
+
+.tileDescription {
+    color: #6b7280;
+    font-size: 1rem;
+    line-height: 1.4rem;
+}
+
+.tileDivider {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.tileLink a {
+    color: #d4a62a !important;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.pageBg {
+    background: #f4f5f7;
+}
+
+/* CARD */
+
+.journeyCard {
+    background: white;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 0.125rem 0.5rem rgba(0,0,0,0.08);
+}
+
+/* HEADER */
+
+.purpleBar {
+    width: 0.35rem;
+    height: 1.6rem;
+    background: #6b21a8;
+    border-radius: 1rem;
+}
+
+.journeyTitle {
+    font-weight: 700;
+    color: #4b5563;
+    letter-spacing: 0.05rem;
+}
+
+.statusChip {
+    background: #f3f4f6;
+    border: 1px solid #d1d5db;
+    border-radius: 2rem;
+    padding: 0.4rem 1rem;
+}
+
+.chipText {
+    font-size: 0.9rem;
+    color: #6b7280;
+}
+
+/* STATUS BOX */
+
+.statusBoxOpen {
+    width: 82%;
+    background: #eef4ff;
+    border: 1px solid #c7d7fe;
+    border-radius: 0.8rem;
+    padding: 1rem;
+}
+
+.statusBoxClosed {
+    width: 14%;
+    background: #f3faf5;
+    border: 1px solid #d4f1dc;
+    border-radius: 0.8rem;
+    padding: 1rem;
+}
+
+.statusLabel {
+    font-size: 0.8rem;
+    color: #9ca3af;
+    letter-spacing: 0.08rem;
+}
+
+.openIcon {
+    color: #2563eb;
+}
+
+.closedIcon {
+    color: #86c69a;
+}
+
+.openText {
+    color: #2563eb;
+}
+
+.closedText {
+    color: #86c69a;
+}
+
+.mappingText {
+    color: #6b7280;
+    margin-top: 0.5rem;
+}
+
+/* TIMELINE */
+
+.timelineContainer {
+    position: relative;
+}
+
+.timelineStep {
+    position: relative;
+    width: 12rem;
+}
+
+.timelineCircle {
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
+
+    width: 3rem;
+    height: 3rem;
+
+    
+}
+
+/* COMPLETE */
+.timelineCircle[data-state="Complete"] {
+    background: #16a34a;
+}
+
+/* IN PROGRESS */
+.timelineCircle[data-state="In Progress"] {
+    background: #f59e0b;
+}
+
+/* PENDING */
+.timelineCircle[data-state="Pending"] {
+    background: white;
+    border: 3px solid #d1d5db;
+}
+
+.timelineLine {
+    position: absolute;
+    top: 1.5rem;
+    left: 50%;
+    width: 100%;
+    height: 0.2rem;
+    background: #d1d5db;
+    z-index: 1;
+}
+
+.timelineTitle {
+    text-align: center;
+    color: #374151;
+}
+
+.statusComplete {
+    color: #16a34a;
+    font-weight: 700;
+}
+
+.statusProgress {
+    color: #f59e0b;
+    font-weight: 700;
+}
+
+.statusPending {
+    color: #9ca3af;
+    font-weight: 700;
+}
+
+/* ALIGNMENT */
+
+.alignmentBox {
+    background: #edf9f0;
+    border: 1px solid #b7ebc6;
+    border-radius: 0.8rem;
+    padding: 1rem;
+}
+
+.alignmentIcon {
+    color: #166534;
+}
+
+.alignmentText {
+    color: #166534;
+}
+
+.alignmentCode {
+    color: #5b8a67;
+    font-weight: 600;
+}

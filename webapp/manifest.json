@@ -1,0 +1,123 @@
+{
+  "_version": "1.76.0",
+  "sap.app": {
+    "id": "styker.com.trackordershipment",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.20.0",
+      "toolsId": "eb79b220-8ce2-4a33-a38f-6bc94ba27a89"
+    },
+    "dataSources": {
+  "mainService": {
+    "uri": "/sap/opu/odata/sap/ZFTS_FEDEX_UNI_CORE_FIORI_CDS/",
+    "type": "OData",
+    "settings": {
+      "odataVersion": "2.0"
+    }
+  }
+}
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": false,
+    "dependencies": {
+      "minUI5Version": "1.148.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+     
+ 
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "styker.com.trackordershipment.i18n.i18n"
+        }
+      },
+        "journeyModel": {
+  "type": "sap.ui.model.json.JSONModel",
+  "uri": "model/journeyModel.json"
+}
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "transition": "slide",
+        "type": "View",
+        "viewType": "XML",
+        "path": "styker.com.trackordershipment.view",
+        "async": true,
+        "viewPath": "styker.com.trackordershipment.view"
+      },
+      "routes": [
+        {
+          "name": "Routeorderlist",
+          "pattern": ":?query:",
+          "target": [
+            "Targetorderlist"
+          ]
+        },
+        {
+          "name": "shipmentStatus",
+          "pattern": "shipmentStatus",
+          "target": "shipmentStatus"
+        }
+      ],
+      "targets": {
+        "Targetorderlist": {
+          "id": "orderlist",
+          "name": "orderlist"
+        },
+        "shipmentStatus": {
+          "id": "shipmentStatus",
+          "name": "shipmentStatus"
+        }
+        
+      }
+    },
+    "rootView": {
+      "viewName": "styker.com.trackordershipment.view.App",
+      "type": "XML",
+      "id": "App",
+      "async": true
+    }
+  }
+}

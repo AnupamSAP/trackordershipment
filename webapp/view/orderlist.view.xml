@@ -1,0 +1,406 @@
+<mvc:View
+    controllerName="styker.com.trackordershipment.controller.orderlist"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:table="sap.ui.table">
+
+    <Page class="sapUiContentPadding">
+
+        <content>
+
+            <!-- Header -->
+            <VBox class="sapUiSmallMarginBottom">
+
+                <HBox
+                    justifyContent="SpaceAround"
+                    alignItems="Center"
+                    class="kpiContainer"
+                    width="100%">
+
+                    <VBox alignItems="Center">
+                        <Title text="12" class="kpiValue" />
+                        <Text text="TOTAL ORDERS" class="kpiLabel" />
+                    </VBox>
+
+                    <VBox class="kpiDivider" />
+
+                    <VBox alignItems="Center">
+                        <Title text="002" class="kpiValue" />
+                        <Text text="Division" class="kpiLabel" />
+                    </VBox>
+
+                    <VBox class="kpiDivider" />
+
+                    <VBox alignItems="Center">
+                        <Title text="160" class="kpiValue" />
+                        <Text text="Total Number of Units" class="kpiLabel" />
+                    </VBox>
+
+                </HBox>
+
+                <Title
+                    text="Orders Shipment Status"
+                    level="H2"
+                    class="sapUiTinyMarginTop sapUiTinyMarginBottom" />
+
+                <Text text="Showing Orders" />
+
+            </VBox>
+
+            <!-- Filters -->
+            <Toolbar class="sapUiSmallMarginTop sapUiSmallMarginBottom">
+
+                <SearchField
+                    width="100%"
+                    placeholder="Search by Order ID, Customer, or Product..."
+                    change="onSearch" />
+
+                <ToolbarSpacer />
+
+                <Select
+                    width="12rem"
+                    change="onStatusFilter">
+
+                    <items>
+                        <core:Item key="ALL" text="All Statuses" />
+                        <core:Item key="PACKCOMPLETE" text="Pack Complete" />
+                        <core:Item key="INPACKING" text="In Packing" />
+                        <core:Item key="PRINTED" text="Printed" />
+                        <core:Item key="UNSELECTED" text="Unselected" />
+                        <core:Item key="WEIGHED" text="Weighed" />
+                         <core:Item key="MANIFESTED" text="Manifested" />
+                         <core:Item key="SHIPPED" text="Shipped/Invoiced" />
+                         <core:Item key="CANCELLED" text="Cancelled" />
+                    </items>
+
+                </Select>
+
+                <Select
+                    width="12rem"
+                    change="onStatusFilter">
+
+                    <items>
+                        <core:Item key="ALL" text="SAP Statuses" />
+                        <core:Item key="ALL" text="Open " />
+                        <core:Item key="ALL" text="Close" />
+                    </items>
+
+                </Select>
+                <DateRangeSelection
+                    id="dateRange"
+                    width="20rem"
+                    displayFormat="dd/MM/yyyy"
+                    valueFormat="yyyy-MM-dd"
+                    delimiter=" - "
+                    change="onDateChange" />
+
+            </Toolbar>
+
+           <!-- Table -->
+<table:Table
+    id="ordersTable"
+    rows="{/ZFTS_FEDEX_UNI_CORE_FIORI}"
+    fixedColumnCount="1"
+    selectionMode="None"
+    enableColumnReordering="true"
+    enableCellFilter="true"
+    visibleRowCount="10"
+    width="100%">
+
+    <!-- Action -->
+    <table:Column
+        width="8rem"
+        hAlign="Center">
+
+        <Label text="Action" />
+
+        <table:template>
+            <Button
+                text="View Status"
+                type="Emphasized"
+                press="onViewStatus" />
+        </table:template>
+
+    </table:Column>
+
+    <!-- Current Status -->
+    <table:Column
+        width="12rem"
+        sortProperty="UNIFIED_STATUS_DESC"
+        filterProperty="UNIFIED_STATUS_DESC">
+
+        <Label text="Current Status" />
+
+        <table:template>
+            <ObjectStatus
+                text="{UNIFIED_STATUS_DESC}"
+                inverted="true"
+                state="{
+                    path: 'status_color',
+                    formatter: '.formatter.formatStatusState'
+                }" />
+        </table:template>
+
+    </table:Column>
+
+    <!-- Division -->
+    <table:Column
+        width="12rem"
+        sortProperty="div_name"
+        filterProperty="div_name">
+
+        <Label text="Division" />
+
+        <table:template>
+            <Text text="{div_name}" />
+        </table:template>
+
+    </table:Column>
+
+    <!-- Order Created Date -->
+    <table:Column
+        width="12rem"
+        sortProperty="so_create_dt_T"
+        filterProperty="so_create_dt_T">
+
+        <Label text="Order Created Date" />
+
+        <table:template>
+            <Text text="{so_create_dt_T}" />
+        </table:template>
+
+    </table:Column>
+
+    <!-- PKT Ctrl Number -->
+    <table:Column
+        width="12rem"
+        sortProperty="pkt_ctrl_num"
+        filterProperty="pkt_ctrl_num">
+
+        <Label text="PKT Ctrl Number" />
+
+        <table:template>
+            <Text text="{pkt_ctrl_num}" />
+        </table:template>
+
+    </table:Column>
+
+    <!-- Customer PO -->
+    <table:Column
+        width="12rem"
+        sortProperty="customer_po"
+        filterProperty="customer_po">
+
+        <Label text="Customer PO" />
+
+        <table:template>
+            <Text text="{customer_po}" />
+        </table:template>
+
+    </table:Column>
+
+    <!-- Stryker Order -->
+    <table:Column
+        width="12rem"
+        sortProperty="stryker_order"
+        filterProperty="stryker_order">
+
+        <Label text="Stryker Order" />
+
+        <table:template>
+            <Text text="{stryker_order}" />
+        </table:template>
+
+    </table:Column>
+
+    <!-- Ship-To Name -->
+    <table:Column
+        width="12rem"
+        sortProperty="kunwe_name"
+        filterProperty="kunwe_name">
+
+        <Label text="Ship-To Name" />
+
+        <table:template>
+            <Text text="{kunwe_name}" />
+        </table:template>
+
+    </table:Column>
+
+    <!-- Total Units -->
+    <table:Column
+        width="10rem"
+        sortProperty="TOTAL_UNITS"
+        filterProperty="TOTAL_UNITS">
+
+        <Label text="Total Units" />
+
+        <table:template>
+            <Text text="{TOTAL_UNITS}" />
+        </table:template>
+
+    </table:Column>
+
+    <!-- Bundles Waved -->
+    <table:Column
+        width="10rem"
+        sortProperty="BUNDLES_WAVED"
+        filterProperty="BUNDLES_WAVED">
+
+        <Label text="Bundles Waved" />
+
+        <table:template>
+            <Text text="{BUNDLES_WAVED}" />
+        </table:template>
+
+    </table:Column>
+
+    <!-- Bundles Packed -->
+    <table:Column
+        width="10rem"
+        sortProperty="BUNDLES_PACKED"
+        filterProperty="BUNDLES_PACKED">
+
+        <Label text="Bundles Packed" />
+
+        <table:template>
+            <Text text="{BUNDLES_PACKED}" />
+        </table:template>
+
+    </table:Column>
+
+    <!-- Bundles Shipped -->
+    <table:Column
+        width="10rem"
+        sortProperty="BUNDLES_SHIPPED"
+        filterProperty="BUNDLES_SHIPPED">
+
+        <Label text="Bundles Shipped" />
+
+        <table:template>
+            <Text text="{BUNDLES_SHIPPED}" />
+        </table:template>
+
+    </table:Column>
+
+    <!-- Ship Via -->
+    <table:Column
+        width="12rem"
+        sortProperty="ship_via1"
+        filterProperty="ship_via1">
+
+        <Label text="Ship Via" />
+
+        <table:template>
+            <Text text="{ship_via1}" />
+        </table:template>
+
+    </table:Column>
+
+    <!-- Tracking Number -->
+    <table:Column
+        width="14rem"
+        sortProperty="tracking_num"
+        filterProperty="tracking_num">
+
+        <Label text="Tracking Number" />
+
+        <table:template>
+            <Text text="{tracking_num}" />
+        </table:template>
+
+    </table:Column>
+
+    <!-- Delivery Value -->
+    <table:Column
+        width="12rem"
+        sortProperty="delivery_value_F"
+        filterProperty="delivery_value_F">
+
+        <Label text="Delivery Value" />
+
+        <table:template>
+            <Text text="{delivery_value_F}" />
+        </table:template>
+
+    </table:Column>
+
+    <!-- Plant -->
+    <table:Column
+        width="10rem"
+        sortProperty="plant_name"
+        filterProperty="plant_name">
+
+        <Label text="Plant" />
+
+        <table:template>
+            <Text text="{plant_name}" />
+        </table:template>
+
+    </table:Column>
+
+    <!-- City -->
+    <table:Column
+        width="10rem"
+        sortProperty="shipto_city"
+        filterProperty="shipto_city">
+
+        <Label text="Ship-To City" />
+
+        <table:template>
+            <Text text="{shipto_city}" />
+        </table:template>
+
+    </table:Column>
+
+    <!-- Country -->
+    <table:Column
+        width="10rem"
+        sortProperty="shipto_country"
+        filterProperty="shipto_country">
+
+        <Label text="Country" />
+
+        <table:template>
+            <Text text="{shipto_country}" />
+        </table:template>
+
+    </table:Column>
+
+    <!-- Last Status Date -->
+    <table:Column
+        width="12rem"
+        sortProperty="LAST_STATUS_DT_T"
+        filterProperty="LAST_STATUS_DT_T">
+
+        <Label text="Last Status Date" />
+
+        <table:template>
+            <Text text="{LAST_STATUS_DT_T}" />
+        </table:template>
+
+    </table:Column>
+
+    <!-- Error Message -->
+    <table:Column
+        width="18rem"
+        sortProperty="error_msg"
+        filterProperty="error_msg">
+
+        <Label text="Error Message" />
+
+        <table:template>
+            <Text
+                text="{error_msg}"
+                wrapping="true" />
+        </table:template>
+
+    </table:Column>
+
+</table:Table>
+        </content>
+
+    </Page>
+
+</mvc:View>
