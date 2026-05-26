@@ -14,6 +14,30 @@ sap.ui.define([
         onInit() {
             this.oRouter = UIComponent.getRouterFor(this);
         },
+        onBeforeRebindTable: function(oEvent){
+           
+
+    var oTable = this.byId("innerTable");
+
+    var aColumns = oTable.getColumns();
+
+    aColumns.forEach(function (oColumn) {
+
+        if (oColumn.getLabel().getText() === "Tracking Number") {
+
+            oColumn.setTemplate(
+
+                new sap.m.Link({
+                    text: "{tracking_num}",
+                    press: this.onViewStatus.bind(this)
+                })
+
+            );
+        }
+
+    }.bind(this));
+
+        },
        
         press: function (evt) {
             MessageToast.show("The GenericTile is pressed.");

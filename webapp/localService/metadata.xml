@@ -8,7 +8,7 @@
 </Key>
 <Property Name="ID" Type="Edm.String" Nullable="false" sap:filterable="false" sap:updatable="false" sap:sortable="false"/>
 <Property Name="TotaledProperties" Type="Edm.String" sap:aggregation-role="totaled-properties-list" sap:is-annotation="true" sap:updatable="false" sap:sortable="false"/>
-<Property Name="tracking_num" Type="Edm.String" MaxLength="50" sap:aggregation-role="dimension" sap:label="Tracking Number" sap:creatable="false" sap:updatable="false"/>
+<Property Name="tracking_num" Type="Edm.String" MaxLength="15" sap:aggregation-role="dimension" sap:label="Tracking Number" sap:creatable="false" sap:updatable="false"/>
 <Property Name="aging_days" Type="Edm.String" MaxLength="11" sap:aggregation-role="dimension" sap:label="AGING_DAYS" sap:creatable="false" sap:updatable="false"/>
 <Property Name="ship_date_3pl" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:text="ship_date_3pl_T" sap:label="SHIP_DATE_3PL" sap:creatable="false" sap:updatable="false" sap:semantics="yearmonthday"/>
 <Property Name="ship_date_3pl_T" Type="Edm.String" MaxLength="10" sap:label="SHIP_DATE_3PL (Description)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
@@ -40,13 +40,13 @@
 <Property Name="actual_gi_dt_T" Type="Edm.String" MaxLength="10" sap:label="Act. Gds Mvmnt Date (Description)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
 <Property Name="delv_create_dt" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:text="delv_create_dt_T" sap:label="Created on" sap:creatable="false" sap:updatable="false" sap:semantics="yearmonthday"/>
 <Property Name="delv_create_dt_T" Type="Edm.String" MaxLength="10" sap:label="Created on (Description)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
-<Property Name="stryker_order" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:label="STRYKER_ORDER" sap:creatable="false" sap:updatable="false"/>
+<Property Name="stryker_order" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:label="Stryker Order No." sap:creatable="false" sap:updatable="false"/>
 <Property Name="customer_po" Type="Edm.String" MaxLength="90" sap:aggregation-role="dimension" sap:label="Customer PO" sap:creatable="false" sap:updatable="false"/>
 <Property Name="wave_to_ship_min" Type="Edm.String" MaxLength="11" sap:aggregation-role="dimension" sap:label="WAVE_TO_SHIP_MIN" sap:creatable="false" sap:updatable="false"/>
 <Property Name="IDOC_CREATED_DT" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:text="IDOC_CREATED_DT_T" sap:label="Created On" sap:creatable="false" sap:updatable="false" sap:semantics="yearmonthday"/>
 <Property Name="IDOC_CREATED_DT_T" Type="Edm.String" MaxLength="10" sap:label="Created On (Description)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
 <Property Name="join_status" Type="Edm.String" MaxLength="1" sap:aggregation-role="dimension" sap:label="JOIN_STATUS" sap:creatable="false" sap:updatable="false"/>
-<Property Name="pkt_ctrl_num" Type="Edm.String" MaxLength="20" sap:aggregation-role="dimension" sap:label="PKT Ctrl Number" sap:creatable="false" sap:updatable="false"/>
+<Property Name="pkt_ctrl_num" Type="Edm.String" MaxLength="20" sap:aggregation-role="dimension" sap:label="Delivery Number" sap:creatable="false" sap:updatable="false"/>
 <Property Name="BATCH_NUM" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:label="Batch" sap:creatable="false" sap:updatable="false"/>
 <Property Name="cdc" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:label="CDC facility identif" sap:creatable="false" sap:updatable="false"/>
 <Property Name="div_name" Type="Edm.String" MaxLength="50" sap:aggregation-role="dimension" sap:label="Division Name" sap:creatable="false" sap:updatable="false"/>
