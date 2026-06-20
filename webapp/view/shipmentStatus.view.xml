@@ -59,17 +59,17 @@
 
                             <VBox class="infoBlock">
                                 <Text text="PKT CTRL NUMBER" class="labelText"/>
-                                <Text text="4007886103" class="valueText"/>
+                                <Text text="{selectedOrder>/tracking_num}" class="valueText"/>
                             </VBox>
 
                             <VBox class="infoBlock">
                                 <Text text="STRYKER ORDER NUMBER" class="labelText"/>
-                                <Text text="—" class="valueText"/>
+                                <Text text="{selectedOrder>/stryker_order}" class="valueText"/>
                             </VBox>
 
                             <VBox class="infoBlock">
                                 <Text text="CUSTOMER PO" class="labelText"/>
-                                <Text text="60182811" class="valueText"/>
+                                <Text text="{selectedOrder>/customer_po}" class="valueText"/>
                             </VBox>
 
                             <VBox class="infoBlock">
@@ -80,12 +80,12 @@
 
                             <VBox class="infoBlock">
                                 <Text text="DIVISION" class="labelText"/>
-                                <Text text="0002" class="valueText"/>
+                                <Text text="{selectedOrder>/div_name}" class="valueText"/>
                             </VBox>
 
                             <VBox class="infoBlock">
                                 <Text text="SHIP-VIA" class="labelText"/>
-                                <Text text="Intl Consolidation" class="valueText"/>
+                                <Text text="{selectedOrder>/ship_via1}" class="valueText"/>
                             </VBox>
 
                             <VBox class="infoBlock">
@@ -113,7 +113,7 @@
 
                             <VBox class="infoBlock">
                                 <Text text="TOTAL UNITS" class="labelText"/>
-                                <Text text="160" class="valueText"/>
+                                <Text text="{selectedOrder>/TOTAL_UNITS}" class="valueText"/>
                             </VBox>
 
                             <VBox class="infoBlock">

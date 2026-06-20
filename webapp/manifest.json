@@ -17,7 +17,7 @@
     },
     "dataSources": {
   "mainService": {
-    "uri": "/sap/opu/odata/sap/ZFTS_FEDEX_UNI_CORE_FIORI_CDS/",
+    "uri": "/sap/opu/odata/sap/ZUI_FEDEX_SERVICE_BIND1/",
     "type": "OData",
     "settings": {
       "odataVersion": "2.0"
@@ -97,7 +97,7 @@
         },
         {
           "name": "shipmentStatus",
-          "pattern": "shipmentStatus",
+          "pattern": "shipmentStatus/{trackingNum}",
           "target": "shipmentStatus"
         }
       ],

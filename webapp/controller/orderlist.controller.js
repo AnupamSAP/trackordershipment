@@ -23,7 +23,7 @@ sap.ui.define([
 
     aColumns.forEach(function (oColumn) {
 
-        if (oColumn.getLabel().getText() === "Tracking Number") {
+        if (oColumn.getLabel().getText() === "CDC Tracking Number") {
 
             oColumn.setTemplate(
 
@@ -154,12 +154,17 @@ sap.ui.define([
 
             oBinding.filter(oFilter);
         },
-        onViewStatus() {
-            this.oRouter.navTo("shipmentStatus", {
+       onViewStatus: function (oEvent) {
 
-            });
+    var oContext = oEvent.getSource().getBindingContext();
 
-        },
+    var sTrackingNum = oContext.getProperty("tracking_num");
+
+    this.getOwnerComponent().getRouter()
+        .navTo("shipmentStatus", {
+            trackingNum: sTrackingNum
+        });
+},
      onDateChange: function (oEvent) {
 
     var dFrom = oEvent.getSource().getDateValue();

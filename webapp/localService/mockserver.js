@@ -12,7 +12,7 @@ sap.ui.define([
             );
 
             var oMockServer = new MockServer({
-                rootUri: "/sap/opu/odata/sap/ZFTS_FEDEX_UNI_CORE_FIORI_CDS/"
+                rootUri: "/sap/opu/odata/sap/ZUI_FEDEX_SERVICE_BIND1/"
             });
 
             oMockServer.simulate(sLocalPath + "/metadata.xml", {

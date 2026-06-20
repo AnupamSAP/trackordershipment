@@ -23,7 +23,7 @@ sap.ui.define([
 
              // THEN create model
             var oModel = new ODataModel(
-                "/sap/opu/odata/sap/ZFTS_FEDEX_UNI_CORE_FIORI_CDS/",
+                "/sap/opu/odata/sap/ZUI_FEDEX_SERVICE_BIND1/",
                 {
                     useBatch: false
                 }

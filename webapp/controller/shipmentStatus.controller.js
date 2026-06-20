@@ -11,11 +11,51 @@ sap.ui.define([
         {
 
              formatter: formatter,
-            onInit: function () {
+          onInit: function () {
 
-                this.oRouter = UIComponent.getRouterFor(this);
+    this.getOwnerComponent()
+        .getRouter()
+        .getRoute("shipmentStatus")
+        .attachPatternMatched(
+            this._onObjectMatched,
+            this
+        );
+},
+_onObjectMatched: function(oEvent) {
 
-            },
+    var sTrackingNum =
+        oEvent.getParameter("arguments").trackingNum;
+
+    var oModel = this.getView().getModel();
+
+    var aFilters = [
+        new sap.ui.model.Filter(
+            "tracking_num",
+            sap.ui.model.FilterOperator.EQ,
+            sTrackingNum
+        )
+    ];
+
+    oModel.read("/FedExUnified", {
+        filters: aFilters,
+        success: function(oData) {
+
+            if (oData.results.length > 0) {
+
+                var oSelectedModel =
+                    new sap.ui.model.json.JSONModel(
+                        oData.results[0]
+                    );
+
+                this.getView().setModel(
+                    oSelectedModel,
+                    "selectedOrder"
+                );
+            }
+
+        }.bind(this)
+    });
+},
            
 
             onBack: function () {

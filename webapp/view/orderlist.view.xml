@@ -53,13 +53,13 @@ xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
             <!-- Filters -->
                <smartFilterBar:SmartFilterBar
         id="smartFilterBar"
-        entitySet="ZFTS_FEDEX_UNI_CORE_FIORI"
+        entitySet="FedExUnified"
         persistencyKey="ShipmentSmartFilter" />
 
            <!-- Table -->
 <smartTable:SmartTable
     id="smartTable" smartFilterId="smartFilterBar"
-    entitySet="ZFTS_FEDEX_UNI_CORE_FIORI" 
+    entitySet="FedExUnified" 
     initiallyVisibleFields="tracking_num,div_name,customer_po,pkt_ctrl_num,stryker_order,UNIFIED_STATUS_DESC"
     tableType="Table" beforeRebindTable="onBeforeRebindTable"
     enableAutoBinding="true">
